@@ -13,23 +13,25 @@
 ; path
 notePath = c:\sync\notes\
 workspace = c:\Users\alex.song\workspace\nfc\NfcAppEMV\jni\
-home = c:\cygwin_net\home\alex.song\
+home = c:\cygwin\home\alex.song\
 
 ;local vars
-editFiles = %notePath%Daily_log_2014.4.txt %notePath%tickets.txt %notePath%gVimNote.txt c:\cygwin_net\home\alex.song\_gvimrc C:\Users\alex.song\Documents\AutoHotkey.ahk c:\sync\notes\buffer\testing.ahk
+gvim = C:\Vim\vim74\gvim.exe
+
+editFiles = %notePath%Daily_log_2014.4.txt %notePath%tickets.txt %notePath%gVimNote.txt c:\cygwin\home\alex.song\_gvimrc C:\Users\alex.song\Documents\AutoHotkey.ahk c:\sync\notes\buffer\testing.ahk
 
 sourceFiles = %workspace%apdu.cpp %workspace%apdu.h %workspace%authProtocol.cpp %workspace%authProtocol.h %workspace%mpAgent-jni.c
 
 ; for vim
 vimrc = %home%vimConfig\_vimrc
 gvimrc = %home%vimConfig\_gvimrc
-gvim = C:\Program Files (x86)\Vim\vim74\gvim.exe -u %vimrc% -U %gvimrc%
+gvim = C:\Vim\vim74\gvim.exe -u %vimrc% -U %gvimrc%
 
 ; number pad area
 ^Numpad1::Run %gvim% -p %editFiles%
 ^Numpad2::Run C:\Users\alex.song\Documents\AutoHotkey.ahk
 ^Numpad3::Run C:\Users\alex.song\AppData\Roaming\Baidu\BaiduYun\baiduyun.exe
-^Numpad4::Run %gvim% -p %sourceFiles% -c "cd $WORK"
+^Numpad4::Run %gvim% -p %sourceFiles% -c "cd %workspace%"
 ^Numpad5::Run www.baidu.com
 ^Numpad6::Run www.google.com
 ^Numpad7::
@@ -42,7 +44,7 @@ return
 Run %notePath%\buffer\testing.ahk
 return
 
-^Numpad9::Run c:\cygwin_net\Cygwin.bat
+^Numpad9::Run c:\cygwin\Cygwin.bat
 
 
 ; for vim only
@@ -80,7 +82,7 @@ keystate = ""
 IfWinExist Total Commander
 	WinActivate
 else
-	Run "C:\Program Files\totalcmd\TOTALCMD64.EXE"
+	Run "C:\totalcmd\TOTALCMD.EXE"
 return
 
 
