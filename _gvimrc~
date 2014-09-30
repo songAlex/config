@@ -63,7 +63,7 @@ set shiftwidth=4
 " no tool bar
 set guioptions-=T
 set spell
-set spellfile+=~/vimConfig/en.utf-8.add
+set spellfile+=~/en.utf-8.add
 
 " set default op
 nmap <enter> i<enter><Esc>
